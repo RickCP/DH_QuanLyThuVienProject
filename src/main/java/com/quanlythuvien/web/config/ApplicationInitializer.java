@@ -1,4 +1,4 @@
-package com.quanlythuvien.config;
+package com.quanlythuvien.web.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -20,7 +20,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 			throws ServletException {
 		AnnotationConfigWebApplicationContext rootContext = new AnnotationConfigWebApplicationContext();
 		rootContext.register(ApplicationContext.class);
-		rootContext.setDisplayName("Spring Thymeleaf Tutorial");
+		rootContext.setDisplayName("Quản Lý Thư Viện");
 
 		// Context loader listener
 		servletContext.addListener(new ContextLoaderListener(rootContext));

@@ -1,4 +1,4 @@
-package com.quanlythuvien.config;
+package com.quanlythuvien.web.config;
 
 import javax.sql.DataSource;
 
@@ -20,9 +20,6 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * @author lvhuy08t2@gmail.com
  * 
  */
-@Configuration
-@EnableTransactionManagement
-@EnableJpaRepositories("com.quanlythuvien.repository")
 public class SpringDataConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired

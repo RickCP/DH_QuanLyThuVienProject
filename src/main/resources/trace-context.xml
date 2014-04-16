@@ -18,7 +18,7 @@
 
 	<aop:config>
 	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * com.quanlythuvien.service..*(..))"/>
-	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * com.quanlythuvien.controller..*(..))"/>
+	  <aop:advisor advice-ref="customizableTraceInterceptor" pointcut="execution(public * com.quanlythuvien.web.controller..*(..))"/>
 	</aop:config>
 
 </beans>

@@ -1,8 +1,4 @@
-package com.quanlythuvien.config;
-
-import com.quanlythuvien.config.SpringDataConfig;
-import com.quanlythuvien.config.ThymeleafConfig;
-
+package com.quanlythuvien.web.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

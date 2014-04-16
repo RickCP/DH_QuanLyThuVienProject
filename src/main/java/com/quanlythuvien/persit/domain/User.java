@@ -1,4 +1,4 @@
-package com.quanlythuvien.domain;
+package com.quanlythuvien.persit.domain;
 
 /**
  *

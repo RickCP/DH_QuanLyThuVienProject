@@ -1,12 +1,15 @@
-package com.quanlythuvien.domain;
+package com.quanlythuvien.persit.domain;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
  * 
  * @author lvhuy08t2@gmail.com
  * 
  */
-
+@Document
 public class TaiKhoan {
+	@Id
 	public String maTK;
 	public String tenTK;
 	public String matKhau;

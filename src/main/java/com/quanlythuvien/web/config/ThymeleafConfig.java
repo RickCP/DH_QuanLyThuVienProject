@@ -1,4 +1,4 @@
-package com.quanlythuvien.config;
+package com.quanlythuvien.web.config;
 
 
 import nz.net.ultraq.web.thymeleaf.LayoutDialect;
