@@ -1,7 +1,7 @@
-package com.rick.spring.thymeleaf.config;
+package com.quanlythuvien.config;
 
-import com.rick.spring.thymeleaf.config.SpringDataConfig;
-import com.rick.spring.thymeleaf.config.ThymeleafConfig;
+import com.quanlythuvien.config.SpringDataConfig;
+import com.quanlythuvien.config.ThymeleafConfig;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -23,7 +23,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
  * 
  */
 @Configuration
-@ComponentScan(basePackages = { "com.rick.spring.thymeleaf" })
+@ComponentScan(basePackages = { "com.quanlythuvien" })
 @EnableWebMvc
 @Import({ SpringDataConfig.class, ThymeleafConfig.class })
 @ImportResource("classpath:trace-context.xml")

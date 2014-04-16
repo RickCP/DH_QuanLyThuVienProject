@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.config;
+package com.quanlythuvien.config;
 
 import javax.sql.DataSource;
 
@@ -22,7 +22,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  */
 @Configuration
 @EnableTransactionManagement
-@EnableJpaRepositories("com.rick.spring.thymeleaf.repository")
+@EnableJpaRepositories("com.quanlythuvien.repository")
 public class SpringDataConfig extends WebMvcConfigurerAdapter {
 
 	@Autowired

@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.reponse;
+package com.quanlythuvien.reponse;
 
 import java.io.Serializable;
 

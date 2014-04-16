@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.domain;
+package com.quanlythuvien.domain;
 
 /**
  *

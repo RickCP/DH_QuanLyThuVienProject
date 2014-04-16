@@ -1,7 +1,7 @@
-package com.rick.spring.thymeleaf.service;
+package com.quanlythuvien.service;
 
-import com.rick.spring.thymeleaf.domain.User;
-import com.rick.spring.thymeleaf.repository.UserRepository;
+import com.quanlythuvien.domain.User;
+import com.quanlythuvien.repository.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

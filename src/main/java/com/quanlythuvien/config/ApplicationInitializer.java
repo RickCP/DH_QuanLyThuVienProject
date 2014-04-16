@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.config;
+package com.quanlythuvien.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;

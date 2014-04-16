@@ -1,12 +1,12 @@
-package com.rick.spring.thymeleaf.util;
+package com.quanlythuvien.util;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.data.domain.Page;
 
-import com.rick.spring.thymeleaf.domain.User;
-import com.rick.spring.thymeleaf.reponse.UserDto;
+import com.quanlythuvien.domain.User;
+import com.quanlythuvien.reponse.UserDto;
 
 /**
  * 

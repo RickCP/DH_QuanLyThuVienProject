@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.util;
+package com.quanlythuvien.util;
 
 /**
  *

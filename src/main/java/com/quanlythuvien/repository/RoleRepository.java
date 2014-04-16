@@ -1,8 +1,8 @@
-package com.rick.spring.thymeleaf.repository;
+package com.quanlythuvien.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.rick.spring.thymeleaf.domain.Role;
+import com.quanlythuvien.domain.Role;
 
 /**
  *

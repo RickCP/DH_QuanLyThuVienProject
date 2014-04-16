@@ -1,4 +1,4 @@
-package com.rick.spring.thymeleaf.controller;
+package com.quanlythuvien.controller;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.rick.spring.thymeleaf.domain.Role;
-import com.rick.spring.thymeleaf.domain.User;
-import com.rick.spring.thymeleaf.reponse.UserDto;
-import com.rick.spring.thymeleaf.repository.UserRepository;
-import com.rick.spring.thymeleaf.service.UserService;
-import com.rick.spring.thymeleaf.util.UserMapper;
+import com.quanlythuvien.domain.Role;
+import com.quanlythuvien.domain.User;
+import com.quanlythuvien.reponse.UserDto;
+import com.quanlythuvien.repository.UserRepository;
+import com.quanlythuvien.service.UserService;
+import com.quanlythuvien.util.UserMapper;
 
 /**
  * 
