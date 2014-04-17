@@ -1,6 +1,7 @@
 package com.quanlythuvien.persit.repository;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
 
 import com.quanlythuvien.persit.domain.Quyen;
 
@@ -10,5 +11,6 @@ import com.quanlythuvien.persit.domain.Quyen;
  *
  */
 public interface QuyenRepository  extends MongoRepository<Quyen,String>{
-
+	@Query("{tenQuyen:?0}")
+  public Quyen timBytenQuyen(String tenQuyen);
 }

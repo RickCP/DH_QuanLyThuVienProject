@@ -22,6 +22,7 @@ public class MongoConfig {
 	public MongoOperations mongoTemplate(Mongo mongo) {
 		MongoTemplate mongoTemplate = new MongoTemplate(mongo,
 				"QuanLyThuVienDB");
+		mongoTemplate.setWriteConcern(com.mongodb.WriteConcern.SAFE);
 		return mongoTemplate;
 	}
 
