@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout">
+<head>
+<title>Trang Quản Lý Danh Mục Sách</title>
+</head>
+<body>
+	<p layout:fragment="content">
+		<link href="../../resources/css/datepicker.css" rel="stylesheet"
+			type="text/css" th:href="@{/resources/css/datepicker.css}" />
+	<div class="row">
+		<div class="col-xs-12">
+
+			<div class="box box-primary col-xs-12">
+				<div class="box-header">
+					<h3 class="box-title">Thêm Độc Giả Mới</h3>
+				</div>
+
+
+				<form action="#">
+					<div class="box-body">
+						
+						<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="form-group">
+								<label for="maDG">Mã Độc Giả</label> <input type="text"
+									class="form-control" id="maDG" placeholder="Nhập Mã Độc Giả" />
+							</div>
+								<div class="form-group">
+								<label for="hoTenDG">Họ Tên Độc Giả</label> <input type="text"
+									class="form-control" id="hoTenDG" placeholder="Nhập Họ Tên Độc Giả" />
+							</div>
+							
+							<div class="form-group">
+								<label>Loại Độc Giả</label> <select class="form-control">
+									<option>Sinh Viên</option>
+									<option>Học Sinh</option>
+									<option>Phụ Huynh</option>
+									<option>Thiếu Nhi</option>
+								</select>
+							</div>
+						
+							
+						</div>
+			
+						<div class="col-sm-4 col-lg-4 col-md-4">
+								<div class="form-group">
+								<label for="diaChi">Địa Chỉ</label> <input type="text"
+									class="form-control" id="diaChi" placeholder="Địa Chỉ" />
+							</div>
+							<div class="form-group">
+								<label for="dienThoai">Điện Thoại</label> <input type="text"
+									class="form-control" id="dienThoai" placeholder="Điện Thoại" />
+							</div>
+							<div class="form-group">
+								<label for="email">Địa Chỉ Email</label> <input
+									type="email" class="form-control" id="email"
+									placeholder="Địa Chỉ Email" />
+							</div>
+
+						</div>
+						
+						<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="form-group">
+								<label>Ngày Sinh:</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control" id="ngaySinh" />
+								</div>
+								<!-- /.input group -->
+							</div>
+							
+							<div class="form-group">
+								<label>Giới Tính</label> <select class="form-control">
+									<option>Nam</option>
+									<option>Nữ</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="box-footer col-sm-12 col-lg-12 col-md-12">
+						<button type="submit" class="btn btn-primary">Thêm Độc Giả Mới</button>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+	<script src="../../resources/js/bootstrap-datepicker.js"
+		type="text/javascript"
+		th:src="@{/resources/js/bootstrap-datepicker.js}"></script>
+	<script type="text/javascript">
+   					$('#ngaySinh').datepicker();
+	</script>
+
+	</p>
+
+</body>
+</html>

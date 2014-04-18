@@ -1,4 +1,6 @@
 package com.quanlythuvien.persit.domain;
+import java.io.Serializable;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.DBRef;
@@ -10,7 +12,11 @@ import org.springframework.data.mongodb.core.mapping.Document;
  * 
  */
 @Document
-public class TaiKhoan {
+public class TaiKhoan implements Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	public String maTK;
 	@Indexed(unique=true)

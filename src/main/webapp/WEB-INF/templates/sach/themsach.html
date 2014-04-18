@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout">
+<head>
+<title>Trang Quản Lý Danh Mục Sách</title>
+</head>
+<body>
+	<p layout:fragment="content">
+		<link href="../../resources/css/datepicker.css" rel="stylesheet"
+			type="text/css" th:href="@{/resources/css/datepicker.css}" />
+	<div class="row">
+		<div class="col-xs-12">
+
+			<div class="box box-primary col-xs-12">
+				<div class="box-header">
+					<h3 class="box-title">Thêm Sách Mới</h3>
+				</div>
+
+
+				<form action="#">
+					<div class="box-body">
+						
+						<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="form-group">
+								<label for="maSach">Mã Sách</label> <input type="text"
+									class="form-control" id="maSach" placeholder="Nhập Mã Sách" />
+							</div>
+							<div class="form-group">
+								<label>Thể Loại</label> <select class="form-control">
+									<option>IT</option>
+									<option>Tạp Chí</option>
+									<option>Thể Thao</option>
+									<option>Truyện Đọc</option>
+								</select>
+							</div>
+
+							<div class="form-group">
+								<label>Ngày nhập:</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control" id="ngayNhap" />
+								</div>
+								<!-- /.input group -->
+							</div>
+							<!-- /.form group -->
+							<div class="form-group">
+								<label for="soTrang">Số Trang Sách</label> <input type="text"
+									class="form-control" id="soTrang" placeholder="Nhập Số Trang" />
+							</div>
+						</div>
+						<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="form-group">
+								<label for="tenSach">Tên Sách</label> <input type="text"
+									class="form-control" id="tenSach" placeholder="Nhập Tên Sách" />
+							</div>
+							<div class="form-group">
+								<label for="nhaXuatBan">NXB</label> <input type="text"
+									class="form-control" id="nhaXuatBan" placeholder="Nhập NXB" />
+							</div>
+							<div class="form-group">
+								<label for="tongSoBan">Tổng Số Bản</label> <input type="text"
+									class="form-control" id="tongSoBan" placeholder="Tổng Số Bản" />
+							</div>
+							<div class="form-group">
+								<label>Ngôn Ngữ</label> <select class="form-control">
+									<option>Tiếng Việt</option>
+									<option>Tiếng Anh</option>
+									<option>Tiếng Nga</option>
+									<option>Tiếng Bồ Đào Nha</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-sm-4 col-lg-4 col-md-4">
+							<div class="form-group">
+								<label for="tacGia">Tác Giả</label> <input type="text"
+									class="form-control" id="tacGia" placeholder="Tác giả" />
+							</div>
+							<div class="form-group">
+								<label for="namXuatBan">Năm Xuất Bản</label> <input type="text"
+									class="form-control" id="namXuatBan" placeholder="Năm Xuất Bản" />
+							</div>
+							<div class="form-group">
+								<label for="tinhTrang">Tình Trạng</label> <input type="text"
+									class="form-control" id="tinhTrang" placeholder="Tình Trạng" />
+							</div>
+
+						</div>
+					</div>
+					<div class="box-footer col-sm-12 col-lg-12 col-md-12">
+						<button type="submit" class="btn btn-primary">Thêm Sách
+							Mới</button>
+					</div>
+				</form>
+
+			</div>
+
+		</div>
+	</div>
+	<script src="../../resources/js/bootstrap-datepicker.js"
+		type="text/javascript"
+		th:src="@{/resources/js/bootstrap-datepicker.js}"></script>
+	<script type="text/javascript">
+   					$('#ngayNhap').datepicker();
+	</script>
+
+	</p>
+
+</body>
+</html>

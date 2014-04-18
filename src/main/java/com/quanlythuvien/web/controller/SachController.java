@@ -33,4 +33,16 @@ public class SachController {
 	public String hienThiMuonTraSach(Model model) {
 		return WebConstant.views.MUON_TRA_SACH;
 	}
+	
+	@RequestMapping(value = "sach/add" , method = RequestMethod.GET)
+	public String hienThiThemSach()
+	{
+		return WebConstant.views.THEM_SACH;
+	}
+	@RequestMapping(value = "sach/edit",method = RequestMethod.GET)
+	public String hienThiSuaSach()
+	{
+		return WebConstant.views.UPDATE_SACH;
+			
+	}
 }
