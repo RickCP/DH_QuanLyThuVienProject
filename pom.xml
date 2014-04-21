@@ -326,7 +326,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>SpringThymeleaf</finalName>
+		<finalName>QuanLyThuVienProject</finalName>
 		<plugins>
 			<!-- Tomcat 7 plugin -->
 			<plugin>

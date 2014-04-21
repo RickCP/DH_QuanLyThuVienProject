@@ -24,13 +24,15 @@ public class ApplicationInitializer implements WebApplicationInitializer {
 
 		// Context loader listener
 		servletContext.addListener(new ContextLoaderListener(rootContext));
-
+       
 		// Dispatcher servlet
 		ServletRegistration.Dynamic dispatcher = servletContext.addServlet(
 				"dispatcher", new DispatcherServlet(rootContext));
 		dispatcher.setLoadOnStartup(1);
 		dispatcher.addMapping("/");
+		
 
 	}
+	
 
 }

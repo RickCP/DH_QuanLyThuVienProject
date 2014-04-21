@@ -19,21 +19,20 @@
 				</div>
 
 
-				<form action="#">
+				<form action="#" th:action="@{/sach/add}" th:object = "${sachUI}" method="post">
 					<div class="box-body">
 						
 						<div class="col-sm-4 col-lg-4 col-md-4">
 							<div class="form-group">
 								<label for="maSach">Mã Sách</label> <input type="text"
-									class="form-control" id="maSach" placeholder="Nhập Mã Sách" />
+									class="form-control" id="maSach" placeholder="Nhập Mã Sách" th:field="*{maSach}" readonly="readonly" />
 							</div>
-							<div class="form-group">
-								<label>Thể Loại</label> <select class="form-control">
-									<option>IT</option>
-									<option>Tạp Chí</option>
-									<option>Thể Thao</option>
-									<option>Truyện Đọc</option>
+								<div class="form-group">
+								<label>Thể Loại</label> 
+								<select class="form-control" th:field="*{theLoaiUI}">
+									<option th:each = "tlUI : ${theLoaiUIs}" th:value="${tlUI.tenTheLoai}" th:text = "${tlUI.tenTheLoai}" >IT</option>
 								</select>
+								<a href="#" th:href="@{/theloai/list}" style="float: right;margin-top: 5px;"><i class="fa fa-fw fa-wrench"></i>Thêm Thể Loại</a>
 							</div>
 
 							<div class="form-group">
@@ -42,56 +41,60 @@
 									<div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									</div>
-									<input type="text" class="form-control" id="ngayNhap" />
+									<input type="text" class="form-control" id="ngayNhap" th:field="*{ngayNhap}" />
 								</div>
 								<!-- /.input group -->
 							</div>
 							<!-- /.form group -->
 							<div class="form-group">
 								<label for="soTrang">Số Trang Sách</label> <input type="text"
-									class="form-control" id="soTrang" placeholder="Nhập Số Trang" />
+									class="form-control" id="soTrang" placeholder="Nhập Số Trang" th:field="*{soTrang}" />
 							</div>
 						</div>
 						<div class="col-sm-4 col-lg-4 col-md-4">
 							<div class="form-group">
 								<label for="tenSach">Tên Sách</label> <input type="text"
-									class="form-control" id="tenSach" placeholder="Nhập Tên Sách" />
+									class="form-control" id="tenSach" placeholder="Nhập Tên Sách" th:field="*{tenSach}" />
 							</div>
 							<div class="form-group">
 								<label for="nhaXuatBan">NXB</label> <input type="text"
-									class="form-control" id="nhaXuatBan" placeholder="Nhập NXB" />
+									class="form-control" id="nhaXuatBan" placeholder="Nhập NXB" th:field="*{nhaXuatBan}" />
 							</div>
 							<div class="form-group">
 								<label for="tongSoBan">Tổng Số Bản</label> <input type="text"
-									class="form-control" id="tongSoBan" placeholder="Tổng Số Bản" />
+									class="form-control" id="tongSoBan" placeholder="Tổng Số Bản" th:field="*{tongSoBan}" />
 							</div>
 							<div class="form-group">
-								<label>Ngôn Ngữ</label> <select class="form-control">
-									<option>Tiếng Việt</option>
-									<option>Tiếng Anh</option>
-									<option>Tiếng Nga</option>
-									<option>Tiếng Bồ Đào Nha</option>
+								<label for="soBanChuaMuon">Số Bản Chưa Mượn</label> <input type="text"
+									class="form-control" id="soBanChuaMuon" placeholder="Số Bản Chưa Mượn" th:field="*{soBanChuaMuon}" />
+							</div>
+							<div class="form-group">
+								<label>Ngôn Ngữ</label> <select class="form-control" th:field="*{ngonNgu}" >
+									<option value = "Tiếng Việt">Tiếng Việt</option>
+									<option value = "Tiếng Anh">Tiếng Anh</option>
+									<option value = "Tiếng Nga">Tiếng Nga</option>
+									<option value = "Tiếng Bồ Đào Nha">Tiếng Bồ Đào Nha</option>
 								</select>
 							</div>
 						</div>
 						<div class="col-sm-4 col-lg-4 col-md-4">
 							<div class="form-group">
 								<label for="tacGia">Tác Giả</label> <input type="text"
-									class="form-control" id="tacGia" placeholder="Tác giả" />
+									class="form-control" id="tacGia" placeholder="Tác giả" th:field="*{tacGia}" />
 							</div>
 							<div class="form-group">
 								<label for="namXuatBan">Năm Xuất Bản</label> <input type="text"
-									class="form-control" id="namXuatBan" placeholder="Năm Xuất Bản" />
+									class="form-control" id="namXuatBan" placeholder="Năm Xuất Bản" th:field="*{namXuatBan}" />
 							</div>
 							<div class="form-group">
 								<label for="tinhTrang">Tình Trạng</label> <input type="text"
-									class="form-control" id="tinhTrang" placeholder="Tình Trạng" />
+									class="form-control" id="tinhTrang" placeholder="Tình Trạng" th:field="*{tinhTrang}" />
 							</div>
 
 						</div>
 					</div>
 					<div class="box-footer col-sm-12 col-lg-12 col-md-12">
-						<button type="submit" class="btn btn-primary">Thêm Sách
+						<button type="submit" class="btn btn-primary" th:text = "${btnName}">Thêm Sách
 							Mới</button>
 					</div>
 				</form>
@@ -104,7 +107,7 @@
 		type="text/javascript"
 		th:src="@{/resources/js/bootstrap-datepicker.js}"></script>
 	<script type="text/javascript">
-   					$('#ngayNhap').datepicker();
+   					$('#ngayNhap').datepicker({ dateFormat: 'dd-mm-yy' });
 	</script>
 
 	</p>

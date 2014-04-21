@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout">
+<head>
+<title>Trang Quản Lý Thể Loại Sách</title>
+</head>
+<body>
+	<p layout:fragment="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary col-xs-12">
+				<div class="box-header">
+					<h3 class="box-title">Thêm Thể Loại Sách</h3>
+				</div>
+				<form action="#" th:action="@{/theloai/add}" th:object="${theLoaiSachUI}" method="post">
+					<div class="box-body">
+							<h2 th:if="${errors}" style="color: red">Trùng tên thể loại sách, vui lòng nhập lại!</h2>
+							<div class="form-group">
+								<label for="maTheLoai">Mã Thể Loại</label> 
+								<input type="text" th:field="*{maTheLoai}"
+									class="form-control" id="maTheLoai" placeholder="Nhập Mã Thể Loại Sách" readonly="readonly" />
+							</div>
+								<div class="form-group">
+								<label for="tenTheLoai">Tên Thể Loại Sách</label> 
+								<input type="text" th:field="*{tenTheLoai}"
+									class="form-control" id="tenTheLoai" placeholder="Nhập Tên Thể Loại Sách" />
+							</div>
+
+					<div class="box-footer col-sm-12 col-lg-12 col-md-12">					
+							<button type="submit" class="btn btn-success" th:text="${btnName}">Thêm Thể Loại Sách</button>					
+					</div>
+					</div>
+				</form>
+				
+				<table id="example2" class="table table-bordered table-hover" >
+					   
+						<thead>
+							<tr>
+								<th>Mã Thể Loại Sách</th>
+								<th>Tên Thể Loại Sách</th>
+								<th>Hành Động</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each ="tl : ${theLoaiSachUIs}">
+								<td th:text = "${tl.maTheLoai}">TL01</td>
+								<td th:text = "${tl.tenTheLoai}">Tiểu Thuyết</td>
+								<td>
+								<a href="#" th:href="@{/theloai/delete(maTheLoai=${tl.maTheLoai})}"><i class="fa fa-fw fa-times"></i> Xóa</a>
+								<br/>
+								 <a href="#" th:href="@{/theloai/edit(maTheLoai=${tl.maTheLoai})}"><i class="fa fa-fw fa-wrench"></i> Sửa </a>
+								 </td>
+							</tr>
+						</tbody>
+			    </table>
+
+			</div>
+			
+			
+		</div>
+	</div>
+	</p>
+
+</body>
+</html>

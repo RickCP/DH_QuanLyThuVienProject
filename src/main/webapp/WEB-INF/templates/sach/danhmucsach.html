@@ -53,23 +53,23 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>S01</td>
-								<td>Programming Java JPA</td>
-								<td>IT</td>
-								<td>Rick Huy</td>
-								<td>Kim Đồng</td>
-								<td>2002</td>
-								<td>10</td>
-								<td>3</td>
-								<td>20.5.2012</td>
-								<td>Tốt</td>
-								<td>250</td>
-								<td>Tiếng anh</td>
+							<tr th:each = "s : ${sachUIs}">
+								<td th:text = "${s.maSach}">S01</td>
+								<td th:text = "${s.tenSach}">Programming Java JPA</td>
+								<td th:text = "${s.theLoaiUI}">IT</td>
+								<td th:text = "${s.tacGia}">Rick Huy</td>
+								<td th:text = "${s.nhaXuatBan}">Kim Đồng</td>
+								<td th:text = "${s.namXuatBan}">2002</td>
+								<td th:text = "${s.tongSoBan}">10</td>
+								<td th:text = "${s.soBanChuaMuon}">3</td>
+								<td th:text = "${s.ngayNhap}">20.5.2012</td>
+								<td th:text = "${s.tinhTrang}">Tốt</td>
+								<td th:text = "${s.soTrang}">250</td>
+								<td th:text = "${s.ngonNgu}">Tiếng anh</td>
 								<td>
-								<a href="#" th:href="@{/sach/delete(id=1)}"><i class="fa fa-fw fa-times"></i> Xóa</a>
+								<a href="#" th:href="@{/sach/delete(maSach=${s.maSach})}"><i class="fa fa-fw fa-times"></i> Xóa</a>
 								<br/>
-								 <a href="#" th:href="@{/sach/edit(id=1)}"><i class="fa fa-fw fa-wrench"></i> Sửa </a>
+								 <a href="#" th:href="@{/sach/edit(maSach=${s.maSach})}"><i class="fa fa-fw fa-wrench"></i> Sửa </a>
 								
 								</td>
 							</tr>

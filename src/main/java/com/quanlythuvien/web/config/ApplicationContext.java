@@ -21,7 +21,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 @Configuration
 @ComponentScan(basePackages = { "com.quanlythuvien" })
 @EnableWebMvc
-@Import({ SpringDataConfig.class, ThymeleafConfig.class })
+@Import({ThymeleafConfig.class })
 @ImportResource("classpath:trace-context.xml")
 @PropertySource("classpath:spring.properties")
 public class ApplicationContext extends WebMvcConfigurerAdapter {
@@ -47,5 +47,6 @@ public class ApplicationContext extends WebMvcConfigurerAdapter {
 		source.setBasename("messages");
 		return source;
 	}
+	
 
 }

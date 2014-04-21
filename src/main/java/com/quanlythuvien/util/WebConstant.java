@@ -6,6 +6,7 @@ package com.quanlythuvien.util;
  *
  */
 public interface WebConstant {
+	public static final String ERRORS ="errors";
 	public interface views
 	{
 		public static final String TRA_CUU_SACH = "sach/tracuusach";
@@ -30,6 +31,8 @@ public interface WebConstant {
 		public static final String THEM_DG = "docgia/themdg";
 		public static final String UPDATE_DG = "docgia/themdg";
 		public static final String TRA_CUU_DG = "docgia/tracuudg";
+		
+		public static final String THEM_THE_LOAI = "theloai/themtheloai";
 		
 	}
 
