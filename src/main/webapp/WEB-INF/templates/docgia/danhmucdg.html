@@ -32,7 +32,7 @@
 							</div>
 						</div>   
 					<table id="example2" class="table table-bordered table-hover">
-					    <form action="#" th:action= "@{/docgia/add}" style="text-align: center;">
+					    <form action="#" th:action= "@{/docgia/add}" style= "text-align: center;" >
 					    <button type="submit" class="btn btn-primary">Thêm Độc Giả</button>
 					    </form>
 						<thead>
@@ -49,19 +49,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>DG01</td>
-								<td>Trần Văn Phát</td>
-								<td>20.3.1996</td>
-								<td>Nam</td>
-								<td>Đà Nẵng</td>
-								<td>0978658456</td>
-								<td>tvp@gmail.com</td>
-								<td>Sinh Viên</td>
+							<tr th:each = "dG : ${dGUIs}">
+								<td th:text = "${dG.maDG}">DG01</td>
+								<td th:text = "${dG.tenDG}">Trần Văn Phát</td>
+								<td th:text = "${dG.ngaySinh}">20.3.1996</td>
+								<td th:text = "${dG.gioiTinh}">Nam</td>
+								<td th:text = "${dG.diaChi}">Đà Nẵng</td>
+								<td th:text = "${dG.dienThoai}">0978658456</td>
+								<td th:text = "${dG.email}">tvp@gmail.com</td>
+								<td th:text = "${dG.loaiDG}">Sinh Viên</td>
 								<td>
-								<a href="#" th:href="@{/docgia/delete(id=1)}"><i class="fa fa-fw fa-times"></i> Xóa Độc Giả</a>
+								<a href="#" th:href="@{/docgia/delete(maDG=${dG.maDG})}"><i class="fa fa-fw fa-times"></i> Xóa Độc Giả</a>
 								<br/>
-								 <a href="#" th:href="@{/docgia/edit(id=1)}"><i class="fa fa-fw fa-wrench"></i> Sửa Độc Giả </a>
+								 <a href="#" th:href="@{/docgia/edit(maDG=${dG.maDG})}"><i class="fa fa-fw fa-wrench"></i> Sửa Độc Giả </a>
 								
 								</td>
 							</tr>

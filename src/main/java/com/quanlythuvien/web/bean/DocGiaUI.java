@@ -1,29 +1,18 @@
-package com.quanlythuvien.persit.domain;
-
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
+package com.quanlythuvien.web.bean;
 
 /**
- *
+ * 
  * @author lvhuy08t2@gmail.com
- *
+ * 
  */
-@Document
-public class DocGia {
-	@Id
+public class DocGiaUI {
 	private String maDG;
-	@Indexed(unique =true)
 	private String tenDG;
-	@DBRef
-	private LoaiDocGia loaiDG;
+	private String loaiDG;
 	private String diaChi;
 	private String dienThoai;
 	private String email;
-	private Date ngaySinh;
+	private String ngaySinh;
 	private String gioiTinh;
 
 	public String getMaDG() {
@@ -42,11 +31,11 @@ public class DocGia {
 		this.tenDG = tenDG;
 	}
 
-	public LoaiDocGia getLoaiDG() {
+	public String getLoaiDG() {
 		return loaiDG;
 	}
 
-	public void setLoaiDG(LoaiDocGia loaiDG) {
+	public void setLoaiDG(String loaiDG) {
 		this.loaiDG = loaiDG;
 	}
 
@@ -74,11 +63,11 @@ public class DocGia {
 		this.email = email;
 	}
 
-	public Date getNgaySinh() {
+	public String getNgaySinh() {
 		return ngaySinh;
 	}
 
-	public void setNgaySinh(Date ngaySinh) {
+	public void setNgaySinh(String ngaySinh) {
 		this.ngaySinh = ngaySinh;
 	}
 
@@ -89,6 +78,7 @@ public class DocGia {
 	public void setGioiTinh(String gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
+
 	
 
 }

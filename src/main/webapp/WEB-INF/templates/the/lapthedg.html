@@ -19,89 +19,32 @@
 				</div>
 
 
-				<form action="#">
+				<form action="#" th:action="@{/the/lapthe}" method="post" th:object ="${theUI}" name="myform" id="myform">
 					<div class="box-body">
-
+						 <p th:if="${info}" style="color: red">Tạo thẻ độc giả thành công!</p>
 						<div class="col-sm-6 col-lg-6 col-md-6">
 
 							<div class="form-group">
-								<label>Mã Độc Giả</label> <select class="form-control">
-									<option>DG01</option>
-									<option>DG02</option>
-									<option>DG03</option>
-									<option>DG04</option>
+								<label>Mã Độc Giả</label> 
+								<select class="form-control"  id="dgs">
+									<option th:each = "dG : ${dGUIs}" th:value="${dG.maDG}" th:text ="${dG.tenDG}">DG01</option>								
 								</select>
 							</div>
+								<!-- /.form group -->
 							<div class="form-group">
-								<label for="tenDG">Họ Tên Độc Giả</label> <input type="text"
-									class="form-control" id="tenDG" placeholder="Nhập Tên Độc Giả" />
+								<label for="maThe">Mã Thẻ</label> <input type="text"
+									class="form-control" id="maThe" placeholder="Mã Thẻ" th:field="*{maThe}" readonly="readonly"/>
 							</div>
-							<div class="form-group">
-								<label>Giới Tính</label> <select class="form-control">
-									<option>Nam</option>
-									<option>Nữ</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Loại Độc Giả</label> <select class="form-control">
-									<option>Sinh Viên</option>
-									<option>Học Sinh</option>
-									<option>Phụ Huynh</option>
-									<option>Thiếu Nhi</option>
-								</select>
-							</div>
-							<div class="form-group">
-								<label>Loại Thẻ</label> <select class="form-control">
-									<option>Thẻ Đọc</option>
-									<option>Thẻ Mượn</option>
-									<option>Thẻ Liên Kết</option>
-								</select>
-							</div>
-
-							<div class="form-group">
+							<div class="form-group" >
 								<label>Ngày Lập Thẻ:</label>
 								<div class="input-group">
 									<div class="input-group-addon">
 										<i class="fa fa-calendar"></i>
 									</div>
 									<input type="text" class="form-control" id="ngayLapThe"
-										placeholder="Ngày Lập Thẻ" />
+										placeholder="Ngày Lập Thẻ" th:field="*{ngayLapThe}"/>
 								</div>
 								<!-- /.input group -->
-							</div>
-							
-
-						</div>
-						<div class="col-sm-6 col-lg-6 col-md-6">
-							<!-- /.form group -->
-							<div class="form-group">
-								<label for="maThe">Mã Thẻ</label> <input type="text"
-									class="form-control" id="maThe" placeholder="Mã Thẻ" />
-							</div>
-							<div class="form-group">
-								<label>Ngày Sinh:</label>
-								<div class="input-group">
-									<div class="input-group-addon">
-										<i class="fa fa-calendar"></i>
-									</div>
-									<input type="text" class="form-control" id="ngaySinh"
-										placeholder="Ngày Sinh" />
-								</div>
-								<!-- /.input group -->
-							</div>
-							<div class="form-group">
-								<label for="diaChi">Địa Chỉ</label> <input type="text"
-									class="form-control" id="diaChi" placeholder="Địa Chỉ" />
-							</div>
-
-							<div class="form-group">
-								<label for="dienThoai">Điện Thoại</label> <input type="text"
-									class="form-control" id="dienThoai" placeholder="Điện Thoại" />
-							</div>
-							<div class="form-group">
-								<label for="email">Địa Chỉ Email</label> <input
-									type="email" class="form-control" id="email"
-									placeholder="Địa Chỉ Email" />
 							</div>
 							
 							<div class="form-group">
@@ -111,15 +54,69 @@
 										<i class="fa fa-calendar"></i>
 									</div>
 									<input type="text" class="form-control" id="ngayHetHan"
-										placeholder="Ngày Hết Hạn" />
+										placeholder="Ngày Hết Hạn" th:field="*{ngayHetHan}" />
 								</div>
 								<!-- /.input group -->
 							</div>
+							<div class="form-group" >
+								<label>Loại Thẻ</label> <select class="form-control" th:field = "*{loaiThe}">
+									<option value="Thẻ Đọc">Thẻ Đọc</option>
+									<option value="Thẻ Mượn">Thẻ Mượn</option>
+									<option value = "Thẻ Liên Kết">Thẻ Liên Kết</option>
+								</select>
+							</div>
+							<div class="form-group">
+							<label for="gioiTinh">Giới Tính</label> <input type="text"
+									class="form-control" id="gioiTinh" placeholder="Giới Tính" th:field = "*{gioiTinh}" readonly="readonly"/>
+							</div>
+							
+		
+						</div>
+						<div class="col-sm-6 col-lg-6 col-md-6">
+						<div class="form-group">
+							<label for="maDG">Mã Độc Giả</label> <input type="text"
+									class="form-control" id="maDG" placeholder="Mã Độc Giả" th:field = "*{maDG}" readonly="readonly"/>
+							</div>
+							<div class="form-group">
+								<label for="tenDG">Họ Tên Độc Giả</label> <input type="text"
+									class="form-control" id="tenDG" placeholder="Tên Độc Giả" th:field = "*{tenDG}" readonly="readonly"/>
+							</div>
+						<div class="form-group">
+								<label for="loaiDG">Loại Độc Giả </label> <input type="text"
+									class="form-control" id="loaiDG" placeholder="Loại Độc Giả" th:field = "*{loaiDG}" readonly="readonly"/>
+							</div>
+							<div class="form-group">
+								<label>Ngày Sinh:</label>
+								<div class="input-group">
+									<div class="input-group-addon">
+										<i class="fa fa-calendar"></i>
+									</div>
+									<input type="text" class="form-control" id="ngaySinh"
+										placeholder="Ngày Sinh" th:field = "*{ngaySinh}" readonly="readonly" />
+								</div>
+								<!-- /.input group -->
+							</div>
+							<div class="form-group">
+								<label for="diaChi">Địa Chỉ</label> <input type="text"
+									class="form-control" id="diaChi" placeholder="Địa Chỉ"  th:field= "*{diaChi}" readonly="readonly"/>
+							</div>
+
+							<div class="form-group">
+								<label for="dienThoai">Điện Thoại</label> <input type="text"
+									class="form-control" id="dienThoai" placeholder="Điện Thoại" th:field = "*{dienThoai}" readonly="readonly"/>
+							</div>
+							<div class="form-group">
+								<label for="email">Địa Chỉ Email</label> <input
+									type="email" class="form-control" id="email"
+									placeholder="Địa Chỉ Email" th:field= "*{email}" readonly="readonly" />
+							</div>
+							
+							
 						</div>
 						
 					</div>
 					<div class="box-footer col-sm-12 col-lg-12 col-md-12">
-						<button type="submit" class="btn btn-primary">Tạo Thẻ</button>
+						<div th:if="${displayBtn != null}  "><button type="submit" class="btn btn-primary">Tạo Thẻ</button></div>
 					</div>
 				</form>
 
@@ -134,6 +131,14 @@
    					$('#ngayLapThe').datepicker();
    					$('#ngaySinh').datepicker();
    					$('#ngayHetHan').datepicker();
+   					$('#dgs').change(function(event) {
+           				   var maDG = $(this).val();
+           				   var newURL = window.location.protocol + "//" + window.location.host + "/QuanLyThuVienProject" ;
+           				   $("#myform").attr("method","get");
+      					   $("#myform").attr("action" ,newURL+"/the/getdg/"+maDG);
+   						   document.forms["myform"].submit();    
+   						
+   					});
 	</script>
 
 	</p>

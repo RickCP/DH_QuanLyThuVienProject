@@ -1,29 +1,24 @@
-package com.quanlythuvien.persit.domain;
+package com.quanlythuvien.web.bean;
 
-import java.util.Date;
-
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.index.Indexed;
-import org.springframework.data.mongodb.core.mapping.DBRef;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 /**
- *
+ * 
  * @author lvhuy08t2@gmail.com
- *
+ * 
  */
-@Document
-public class DocGia {
-	@Id
+public class TheUI {
+
+	private String maThe;
+	private String ngayLapThe;
+	private String ngayHetHan;
+	private String loaiThe;
 	private String maDG;
-	@Indexed(unique =true)
 	private String tenDG;
-	@DBRef
-	private LoaiDocGia loaiDG;
+	private String loaiDG;
 	private String diaChi;
 	private String dienThoai;
 	private String email;
-	private Date ngaySinh;
+	private String ngaySinh;
 	private String gioiTinh;
 
 	public String getMaDG() {
@@ -42,11 +37,11 @@ public class DocGia {
 		this.tenDG = tenDG;
 	}
 
-	public LoaiDocGia getLoaiDG() {
+	public String getLoaiDG() {
 		return loaiDG;
 	}
 
-	public void setLoaiDG(LoaiDocGia loaiDG) {
+	public void setLoaiDG(String loaiDG) {
 		this.loaiDG = loaiDG;
 	}
 
@@ -74,11 +69,11 @@ public class DocGia {
 		this.email = email;
 	}
 
-	public Date getNgaySinh() {
+	public String getNgaySinh() {
 		return ngaySinh;
 	}
 
-	public void setNgaySinh(Date ngaySinh) {
+	public void setNgaySinh(String ngaySinh) {
 		this.ngaySinh = ngaySinh;
 	}
 
@@ -89,6 +84,37 @@ public class DocGia {
 	public void setGioiTinh(String gioiTinh) {
 		this.gioiTinh = gioiTinh;
 	}
-	
+
+	public String getMaThe() {
+		return maThe;
+	}
+
+	public void setMaThe(String maThe) {
+		this.maThe = maThe;
+	}
+
+	public String getNgayLapThe() {
+		return ngayLapThe;
+	}
+
+	public void setNgayLapThe(String ngayLapThe) {
+		this.ngayLapThe = ngayLapThe;
+	}
+
+	public String getNgayHetHan() {
+		return ngayHetHan;
+	}
+
+	public void setNgayHetHan(String ngayHetHan) {
+		this.ngayHetHan = ngayHetHan;
+	}
+
+	public String getLoaiThe() {
+		return loaiThe;
+	}
+
+	public void setLoaiThe(String loaiThe) {
+		this.loaiThe = loaiThe;
+	}
 
 }

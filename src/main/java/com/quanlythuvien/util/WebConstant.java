@@ -34,6 +34,8 @@ public interface WebConstant {
 		
 		public static final String THEM_THE_LOAI = "theloai/themtheloai";
 		
+		public static final String THEM_LOAI_DG = "docgia/themloaidg";
+		
 	}
 
 }

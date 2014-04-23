@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="/layout">
+<head>
+<title>Trang Quản Lý Loại Độc Giả</title>
+</head>
+<body>
+	<p layout:fragment="content">
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="box box-primary col-xs-12">
+				<div class="box-header">
+					<h3 class="box-title">Thêm Loại Độc Giả</h3>
+				</div>
+				<form action="#" th:action="@{/loaidg/add}" th:object="${loaiDGUI}" method="post">
+					<div class="box-body">
+							<h2 th:if="${errors}" style="color: red">Trùng tên thể loại độc giả, vui lòng nhập lại!</h2>
+							<div class="form-group">
+								<label for="maDG">Mã Loại Độc Giả</label> 
+								<input type="text" th:field="*{maDG}"
+									class="form-control" id="maDG" placeholder="Mã Loại Độc Giả" readonly="readonly" />
+							</div>
+								<div class="form-group">
+								<label for="tenDG">Tên Thể Loại Sách</label> 
+								<input type="text" th:field="*{tenDG}"
+									class="form-control" id="tenDG" placeholder="Nhập Tên Loại Độc Giả" />
+							</div>
+
+					<div class="box-footer col-sm-12 col-lg-12 col-md-12">					
+							<button type="submit" class="btn btn-success" th:text="${btnName}">Thêm Loại Độc Giả</button>					
+					</div>
+					</div>
+				</form>
+				
+				<table id="example2" class="table table-bordered table-hover" >
+					   
+						<thead>
+							<tr>
+								<th>Mã Loại Độc Giả</th>
+								<th>Loại Độc Giả</th>
+								<th>Hành Động</th>								
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each ="ldg : ${loaiDGUIs}">
+								<td th:text = "${ldg.maDG}">LDG01</td>
+								<td th:text = "${ldg.tenDG}">Thiếu Nhi</td>
+								<td>
+								<a href="#" th:href="@{/loaidg/delete(maDG=${ldg.maDG})}"><i class="fa fa-fw fa-times"></i> Xóa</a>
+								<br/>
+								 <a href="#" th:href="@{/loaidg/edit(maDG=${ldg.maDG})}"><i class="fa fa-fw fa-wrench"></i> Sửa </a>
+								 </td>
+							</tr>
+						</tbody>
+			    </table>
+
+			</div>
+			
+			
+		</div>
+	</div>
+	</p>
+
+</body>
+</html>
